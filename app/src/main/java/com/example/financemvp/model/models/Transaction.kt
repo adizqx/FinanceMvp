@@ -9,5 +9,6 @@ data class Transaction(
     var id: Int,
     var name: String,
     var amount: Double,
-    var description: String
+    var type: String,
+    var tag: String
 )

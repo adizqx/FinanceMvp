@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="12dp"
     android:gravity="center"
     android:orientation="vertical"
+    android:layout_margin="16dp"
     tools:context=".view.AddFragment">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -18,8 +19,28 @@
             android:id="@+id/inputName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name"
+            android:hint="@string/OperationTitleHint"
+            android:drawableStart="@drawable/note_selector"
+            android:drawablePadding="12dp"
             android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_transactionType_view"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/TransactionTypeHint"
+        app:boxBackgroundColor="#f9f9f9">
+
+        <AutoCompleteTextView
+            android:id="@+id/et_transactionType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:labelFor="@id/et_transactionType" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -33,30 +54,39 @@
             android:id="@+id/inputAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Amount"
-            android:inputType="numberSigned" />
+            android:hint="@string/SumHint"
+            android:drawableStart="@drawable/value_selector"
+            android:drawablePadding="12dp"
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutDesc"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/et_tag_view"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        android:hint="@string/CategoryHint"
+        app:boxBackgroundColor="#f9f9f9">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputDesc"
+        <AutoCompleteTextView
+            android:id="@+id/et_tag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Description"
-            android:inputType="text" />
+            android:inputType="none"
+            android:labelFor="@id/et_tag" />
+
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btnAddTransaction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
-        android:text="ADD" />
-
+        android:background="@drawable/round"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:text="@string/addTransactionBtnText" />
 </LinearLayout>

@@ -11,6 +11,7 @@ import com.example.financemvp.databinding.FragmentHomeBinding
 import com.example.financemvp.model.models.Transaction
 import com.example.financemvp.presenter.HomePresenter
 import com.example.financemvp.view.adapter.TransactionAdapter
+import java.text.DecimalFormat
 
 
 class HomeFragment : Fragment(), IHomeView {
@@ -40,17 +41,16 @@ class HomeFragment : Fragment(), IHomeView {
         val total = array.map { it.amount }.sum()
         val budget = array.filter { it.amount > 0 }.map { it.amount }.sum()
         val expense = total - budget
-        binding.tvExpense.text = "$ %.2f".format(expense)
-        binding.tvTotal.text = "$ %.2f".format(total)
-        binding.tvIncome.text = "$ %.2f".format(budget)
+
+        val df = DecimalFormat("#,##0.00")
+        binding.tvExpense.text = df.format(expense)
+        binding.tvTotal.text = df.format(total)
+        binding.tvIncome.text = df.format(budget)
     }
 
     private fun openFragment() {
         findNavController().navigate(R.id.action_homeFragment_to_addFragment)
     }
 
-    private fun updateDashboard() {
-
-    }
 
 }

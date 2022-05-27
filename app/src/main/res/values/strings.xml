@@ -2,4 +2,13 @@
     <string name="app_name">FinanceMvp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="addTransactionBtnText">Добавить</string>
+    <string name="CategoryHint">Категория</string>
+    <string name="SumHint">Сумма</string>
+    <string name="TransactionTypeHint">Тип операции</string>
+    <string name="OperationTitleHint">Операция</string>
+    <string name="RecentTransactionTitle">Последние операции</string>
+    <string name="ExpenseTitle">Расход</string>
+    <string name="IncomeTitle">Доход</string>
+    <string name="TotalBudgetTitle">Общий баланс</string>
 </resources>
